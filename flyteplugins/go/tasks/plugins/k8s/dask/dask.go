@@ -209,7 +209,7 @@ func createSchedulerSpec(scheduler plugins.DaskScheduler, clusterName string, po
 			Protocol:      "TCP",
 		},
 		{
-			Name:          "dashboard",
+			Name:          "http-dashboard",
 			ContainerPort: 8787,
 			Protocol:      "TCP",
 		},
@@ -239,10 +239,10 @@ func createSchedulerSpec(scheduler plugins.DaskScheduler, clusterName string, po
 					TargetPort: intstr.FromString("tcp-comm"),
 				},
 				{
-					Name:       "dashboard",
+					Name:       "http-dashboard",
 					Protocol:   "TCP",
 					Port:       8787,
-					TargetPort: intstr.FromString("dashboard"),
+					TargetPort: intstr.FromString("http-dashboard"),
 				},
 			},
 		},

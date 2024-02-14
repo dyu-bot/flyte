@@ -247,7 +247,7 @@ func TestBuildResourceDaskHappyPath(t *testing.T) {
 			Protocol:      "TCP",
 		},
 		{
-			Name:          "dashboard",
+			Name:          "http-dashboard",
 			ContainerPort: 8787,
 			Protocol:      "TCP",
 		},
@@ -276,10 +276,10 @@ func TestBuildResourceDaskHappyPath(t *testing.T) {
 			TargetPort: intstr.FromString("tcp-comm"),
 		},
 		{
-			Name:       "dashboard",
+			Name:       "http-dashboard",
 			Protocol:   "TCP",
 			Port:       8787,
-			TargetPort: intstr.FromString("dashboard"),
+			TargetPort: intstr.FromString("http-dashboard"),
 		},
 	}
 	assert.Equal(t, v1.ServiceTypeNodePort, schedulerServiceSpec.Type)
